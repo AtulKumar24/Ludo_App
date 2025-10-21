@@ -1,41 +1,52 @@
-name: Flutter CI
+name: ludo_app
+description: "Ludo app - A modern multiplayer Ludo game with payment integration."
+publish_to: 'none'
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+version: 1.0.0+1
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+environment:
+  sdk: ">=3.9.0 <4.0.0"
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+dependencies:
+  flutter:
+    sdk: flutter
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.3' # or your local version
+  # Core Flutter packages
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.1
 
-      - name: Install dependencies
-        run: flutter pub get
+  # Game engine and audio
+  flame: ^1.16.0
+  flame_audio: ^2.1.8
 
-      # 👇 This ensures analyzer warnings don't break CI
-      - name: Analyze (non-fatal)
-        run: |
-          flutter analyze || echo "Analyzer warnings ignored."
+  # Firebase core (required field fixed)
+  firebase_core: ^3.8.0
 
-      - name: Run tests (optional)
-        run: |
-          flutter test || echo "Tests failed but continuing."
+  # State management
+  provider: ^6.1.2
 
-      - name: Build APK
-        run: flutter build apk --release
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+  # Lints for code quality
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/Icons/
+
+  fonts:
+    - family: Host_Grotesk
+      fonts:
+        - asset: assets/Fonts/Host_Grotesk/HostGrotesk-VariableFont_wght.ttf
+        - asset: assets/Fonts/Host_Grotesk/HostGrotesk-Italic-VariableFont_wght.ttf
+          style: italic
+        - asset: assets/Fonts/Host_Grotesk/static/HostGrotesk-ExtraBold.ttf
+          weight: 700
+    - family: Roboto
+      fonts:
+        - asset: assets/Fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf

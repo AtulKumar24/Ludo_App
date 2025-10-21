@@ -6,8 +6,8 @@ import 'package:flame/effects.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/geometry.dart';
 // user files
-import '../../Model/ludo.dart';
-import '../../Widgets/ludo_board.dart';
+import '../../model/ludo.dart';
+import '../../widgets/ludo_board.dart';
 import 'dice_face_component.dart';
 import '../../state/game_state.dart';
 import '../../state/audio_manager.dart';

@@ -6,13 +6,13 @@ import 'package:flame/game.dart';
 
 import 'package:provider/provider.dart';
 
-import 'Model/ludo.dart';
-import 'View/Home.dart';
-import 'View/Loading.dart';
-import 'View/opp.dart';
-import 'Model/Responsive.dart';
-import 'Widgets/ProfileTab.dart';
-import 'Widgets/EmojiSection.dart';
+import 'model/ludo.dart';
+import 'view/home.dart';
+import 'view/loading.dart';
+import 'view/opp.dart';
+import 'model/responsive.dart';
+import 'widgets/profile_tab.dart';
+import 'widgets/emoji_section.dart';
 import 'state/coin_manager.dart';
 
 void main() {
@@ -324,11 +324,11 @@ class _GameAppState extends State<GameApp> {
                     child: Container(
                       padding: EdgeInsets.all(8 * scale),
                       decoration: BoxDecoration(
-                        color: Colors.red.withOpacity(0.8),
+                        color: Colors.red.withAlpha((255 * 0.8).round()),
                         borderRadius: BorderRadius.circular(20 * scale),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.3),
+                            color: Colors.black.withAlpha((255 * 0.3).round()),
                             blurRadius: 4 * scale,
                             offset: Offset(0, 2 * scale),
                           ),
@@ -356,7 +356,6 @@ class _GameAppState extends State<GameApp> {
                       _selectedEmoji = emoji;
                     });
                     // Handle emoji selection
-                    print('Selected emoji: $emoji');
                   },
                 ),
               ),

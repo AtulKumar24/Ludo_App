@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flutter/material.dart';
-import 'package:ludo_app/View/Home.dart';
+import 'package:ludo_app/view/home.dart';
 
 import '../../state/player.dart';
 

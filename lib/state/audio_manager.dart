@@ -15,7 +15,7 @@ class AudioManager {
         );
         _isInitialized = true;
       } catch (e) {
-        print('Audio file not found, continuing without sound: $e');
+        // Audio file not found, continuing without sound
         _isInitialized = true; // Mark as initialized to prevent retries
       }
     }
@@ -26,7 +26,7 @@ class AudioManager {
       try {
         return await _diceSoundPool!.start(volume: volume);
       } catch (e) {
-        print('Error playing dice sound: $e');
+        // Error playing dice sound
       }
     }
     // Return a dummy stop function if no audio
@@ -37,7 +37,7 @@ class AudioManager {
     try {
       await _diceSoundPool?.dispose();
     } catch (e) {
-      print('Error disposing audio: $e');
+      // Error disposing audio
     }
     _diceSoundPool = null;
     _isInitialized = false;

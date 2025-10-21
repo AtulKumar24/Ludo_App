@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flutter/material.dart';
-import '../../Model/ludo.dart';
+import '../../model/ludo.dart';
 import '../../state/game_state.dart';
 import '../../state/token_manager.dart';
 
@@ -61,7 +61,7 @@ class Token extends PositionComponent with TapCallbacks {
     final smallerCircleShadow = Offset(size.x / 2, size.y / 1.75);
 
     canvas.drawCircle(tokenShadow, outerRadius,
-        Paint()..color = const Color(0xFF3C3D37).withOpacity(0.6));
+        Paint()..color = const Color(0xFF3C3D37).withAlpha((255 * 0.6).round()));
     canvas.drawCircle(centerShadow, sideOuterRadius,
         Paint()..color = sideColor); // Draw outer circle
 
@@ -69,7 +69,7 @@ class Token extends PositionComponent with TapCallbacks {
         center, outerRadius, Paint()..color = topColor); // Draw border
 
     canvas.drawCircle(smallerCircleShadow, smallerCircleDepth,
-        Paint()..color = const Color(0xFF3C3D37).withOpacity(0.7));
+        Paint()..color = const Color(0xFF3C3D37).withAlpha((255 * 0.7).round()));
     canvas.drawCircle(center, smallerCircle, Paint()..color = Colors.white);
 
     // Conditionally render the circle around the token
@@ -82,7 +82,7 @@ class Token extends PositionComponent with TapCallbacks {
     final center = Offset(size.x / 2, size.y / 1.8);
 
     final paint = Paint()
-      ..color = Colors.black.withOpacity(0.4) // Blue color with transparency
+      ..color = Colors.black.withAlpha((255 * 0.4).round()) // Blue color with transparency
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.8;
 

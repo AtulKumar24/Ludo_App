@@ -29,10 +29,9 @@ jobs:
       - name: Check pubspec format
         run: flutter pub deps || echo "Dependency check skipped."
 
-      # Analyze code (non-fatal)
-      - name: Analyze (non-fatal)
-        run: |
-          flutter analyze || echo "Ignoring analyzer warnings."
+      # Analyze code
+      - name: Analyze code
+        run: flutter analyze
 
       # Run tests (non-fatal)
       - name: Run tests

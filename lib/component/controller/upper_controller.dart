@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/effects.dart';
-import '../../Model/ludo.dart';
+import '../../model/ludo.dart';
 import '../../state/game_state.dart';
 import '../../component/ui_components/dice_pointer.dart';
 // user files

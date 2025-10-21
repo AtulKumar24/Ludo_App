@@ -146,7 +146,7 @@ packages:
     source: hosted
     version: "7.0.1"
   firebase_core:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: "132e1c311bc41e7d387b575df0aacdf24efbf4930365eb61042be5bde3978f03"
@@ -178,7 +178,7 @@ packages:
     source: hosted
     version: "1.1.1"
   flame:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flame
       sha256: "86f63943349ef4d891fd1988ccd9fa3d27952eb8d9eb17b774a64e78cd62aaa6"
@@ -186,7 +186,7 @@ packages:
     source: hosted
     version: "1.32.0"
   flame_audio:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flame_audio
       sha256: "7c85f2975fcf8a385d47c225f63da97801ee150bc7ed7bf448f826403d5cef9f"
@@ -207,7 +207,7 @@ packages:
     source: hosted
     version: "5.0.0"
   flutter_svg:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_svg
       sha256: b9c2ad5872518a27507ab432d1fb97e8813b05f0fc693f9d40fad06d073e0678

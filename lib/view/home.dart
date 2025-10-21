@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ludo_app/Model/Responsive.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ludo_app/widgets/wallet_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../Model/Card.dart' show GameCard;
-import '../Widgets/WalletScreen.dart';
 import '../state/coin_manager.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => WalletScreen(
+        builder: (context) =>   WalletScreen(
           currentCoins: currentCoins,
           onCoinsUpdated: (newCoins) {
             Provider.of<CoinManager>(context, listen: false).setCoins(newCoins);

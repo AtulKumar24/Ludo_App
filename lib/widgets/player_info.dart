@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Model/LudoGame.dart';
+import 'package:ludo_app/model/ludo_game.dart';
 import '../Model/Responsive.dart';
 
 class PlayerInfo extends StatelessWidget {

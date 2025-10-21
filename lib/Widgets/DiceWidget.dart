@@ -9,12 +9,12 @@ class DiceWidget extends StatefulWidget {
   final double? scale;
 
   const DiceWidget({
-    Key? key,
+    super.key,
     required this.value,
     this.isRolling = false,
     required this.onTap,
     this.scale,
-  }) : super(key: key);
+  });
 
   @override
   State<DiceWidget> createState() => _DiceWidgetState();

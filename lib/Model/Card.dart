@@ -21,7 +21,7 @@ class GameCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const GameCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.titleGradient,
     required this.subtitle,
@@ -38,7 +38,7 @@ class GameCard extends StatelessWidget {
     this.badgeText2,
     this.scale = 1.0,
     this.onTap,
-  }) : super(key: key);
+  });
 
   // Helper widget to create gradient text easily
   Widget _buildGradientText(

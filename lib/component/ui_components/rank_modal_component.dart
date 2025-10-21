@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:ludo_app/View/Home.dart';
 
 import '../../state/player.dart';
-import '../../../main.dart';
 
 class RankModalComponent extends PositionComponent with TapCallbacks {
   final List<Player> players;

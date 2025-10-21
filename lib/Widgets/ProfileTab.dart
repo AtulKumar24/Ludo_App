@@ -13,7 +13,7 @@ class ProfileTab extends StatefulWidget {
   final VoidCallback? onEmojiTap;
 
   const ProfileTab({
-    Key? key,
+    super.key,
     required this.userName,
     required this.opponentName,
     required this.userProfileImage,
@@ -23,7 +23,7 @@ class ProfileTab extends StatefulWidget {
     this.userDiceValue = 0,
     this.opponentDiceValue = 0,
     this.onEmojiTap,
-  }) : super(key: key);
+  });
 
   @override
   State<ProfileTab> createState() => _ProfileTabState();

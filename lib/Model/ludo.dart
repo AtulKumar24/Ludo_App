@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:ludo_app/component/home/home.dart';
 
-import '../View/Home.dart';
 import '../Widgets/ludo_board.dart';
 import '../component/controller/lower_controller.dart';
 import '../component/controller/upper_controller.dart';
@@ -172,12 +171,10 @@ class Ludo extends FlameGame
         .first;
 
     // Add the appropriate effect based on shouldBlink
-    if (homePlate is RectangleComponent) {
-      (homePlate as RectangleComponent).add(
-        shouldBlink ? _redBlinkEffect! : _redStaticEffect!,
-      );
-    }
-
+    (homePlate as RectangleComponent).add(
+      shouldBlink ? _redBlinkEffect! : _redStaticEffect!,
+    );
+  
     if (shouldBlink) {
       final ludoDice = rightDiceContainer.children
           .whereType<LudoDice>()
@@ -242,12 +239,10 @@ class Ludo extends FlameGame
         .first;
 
     // Add the appropriate effect based on shouldBlink
-    if (homePlate is RectangleComponent) {
-      (homePlate as RectangleComponent).add(
-        shouldBlink ? _yellowBlinkEffect! : _yellowStaticEffect!,
-      );
-    }
-
+    (homePlate as RectangleComponent).add(
+      shouldBlink ? _yellowBlinkEffect! : _yellowStaticEffect!,
+    );
+  
     if (shouldBlink) {
       final player = GameState().players[GameState().currentPlayerIndex];
       rightDiceContainer.add(
@@ -303,12 +298,10 @@ class Ludo extends FlameGame
         .first;
 
     // Add the appropriate effect based on shouldBlink
-    if (homePlate is RectangleComponent) {
-      (homePlate as RectangleComponent).add(
-        shouldBlink ? _blueBlinkEffect! : _blueStaticEffect!,
-      );
-    }
-
+    (homePlate as RectangleComponent).add(
+      shouldBlink ? _blueBlinkEffect! : _blueStaticEffect!,
+    );
+  
     if (shouldBlink) {
       final ludoDice = leftDiceContainer.children
           .whereType<LudoDice>()
@@ -371,12 +364,10 @@ class Ludo extends FlameGame
         .first;
 
     // Add the appropriate effect based on shouldBlink
-    if (homePlate is RectangleComponent) {
-      (homePlate as RectangleComponent).add(
-        shouldBlink ? _greenBlinkEffect! : _greenStaticEffect!,
-      );
-    }
-
+    (homePlate as RectangleComponent).add(
+      shouldBlink ? _greenBlinkEffect! : _greenStaticEffect!,
+    );
+  
     if (shouldBlink) {
       final player = GameState().players[GameState().currentPlayerIndex];
       rightDiceContainer.add(

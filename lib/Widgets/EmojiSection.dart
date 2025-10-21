@@ -6,10 +6,10 @@ class EmojiSection extends StatefulWidget {
   final List<String>? selectedEmojis;
 
   const EmojiSection({
-    Key? key,
+    super.key,
     this.onEmojiSelected,
     this.selectedEmojis,
-  }) : super(key: key);
+  });
 
   @override
   State<EmojiSection> createState() => _EmojiSectionState();

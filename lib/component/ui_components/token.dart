@@ -137,7 +137,9 @@ class Token extends PositionComponent with TapCallbacks {
         !enableToken ||
         world is! World ||
         (isInBase() && GameState().diceNumber != 6) ||
-        isInHome()) return;
+        isInHome()) {
+      return;
+    }
 
     enableToken = false;
 

@@ -6,10 +6,10 @@ class WalletScreen extends StatefulWidget {
   final Function(int) onCoinsUpdated;
 
   const WalletScreen({
-    Key? key,
+    super.key,
     required this.currentCoins,
     required this.onCoinsUpdated,
-  }) : super(key: key);
+  });
 
   @override
   State<WalletScreen> createState() => _WalletScreenState();

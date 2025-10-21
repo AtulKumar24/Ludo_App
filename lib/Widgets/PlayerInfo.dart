@@ -9,12 +9,12 @@ class PlayerInfo extends StatelessWidget {
   final double? scale;
 
   const PlayerInfo({
-    Key? key,
+    super.key,
     required this.player,
     this.isCurrentPlayer = false,
     this.diceValue = 0,
     this.scale,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

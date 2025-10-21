@@ -47,7 +47,9 @@ class Player {
   }) : pieces = List.generate(4, (index) => Piece(id: index, color: color));
 
   void reset() {
-    pieces.forEach((piece) => piece.reset());
+    for (var piece in pieces) {
+      piece.reset();
+    }
     isActive = false;
   }
 }
@@ -404,7 +406,9 @@ class LudoGame {
   void startGame() {
     gameState = GameState.playing;
     currentPlayerIndex = 0;
-    players.forEach((player) => player.reset());
+    for (var player in players) {
+      player.reset();
+    }
     currentPlayer.isActive = true;
   }
 
@@ -413,7 +417,9 @@ class LudoGame {
     currentPlayerIndex = 0;
     diceValue = 0;
     selectedPieceIndex = null;
-    players.forEach((player) => player.reset());
+    for (var player in players) {
+      player.reset();
+    }
   }
 
   // Get all pieces at a specific board position

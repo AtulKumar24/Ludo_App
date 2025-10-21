@@ -12,7 +12,6 @@ import 'dice_face_component.dart';
 import '../../state/game_state.dart';
 import '../../state/audio_manager.dart';
 import '../../state/player.dart';
-import '../controller/lower_controller.dart';
 import 'token.dart';
 
 class LudoDice extends PositionComponent with TapCallbacks {

@@ -11,31 +11,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Setup Flutter SDK
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.3' # or your local version
 
+      # Get dependencies
       - name: Install dependencies
         run: flutter pub get
 
-      # 👇 This ensures analyzer warnings don't break CI
+      # Optional: Verify pubspec format
+      - name: Check pubspec format
+        run: flutter pub deps || echo "Dependency check skipped."
+
+      # Analyze code (non-fatal)
       - name: Analyze (non-fatal)
         run: |
-          flutter analyze || echo "Analyzer warnings ignored."
+          flutter analyze || echo "Ignoring analyzer warnings."
 
-      - name: Run tests (optional)
+      # Run tests (non-fatal)
+      - name: Run tests
         run: |
-          flutter test || echo "Tests failed but continuing."
+          flutter test || echo "Ignoring test failures."
 
+      # Build APK (release)
       - name: Build APK
         run: flutter build apk --release
 
+      # Upload APK artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      # Optional: Upload to Firebase App Distribution
+      - name: Upload to Firebase App Distribution
+        if: ${{ secrets.FIREBASE_APP_ID != '' }}
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          token: ${{ secrets.FIREBASE_TOKEN }}
+          groups: testers
+          file: build/app/outputs/flutter-apk/app-release.apk

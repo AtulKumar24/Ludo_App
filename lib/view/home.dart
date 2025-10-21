@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) =>   WalletScreen(
+        builder: (context) => WalletScreen(
           currentCoins: currentCoins,
           onCoinsUpdated: (newCoins) {
             Provider.of<CoinManager>(context, listen: false).setCoins(newCoins);
@@ -217,7 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "assets/Icons/wallet.svg",
                                     width: 20 * scale,
                                     height: 20 * scale,
-                                    color: Colors.white,
+                                    colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
                                   ),
                                   SizedBox(width: 6 * scale),
                                   Text(

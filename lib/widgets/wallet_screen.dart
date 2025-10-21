@@ -77,7 +77,7 @@ class _WalletScreenState extends State<WalletScreen> {
                     borderRadius: BorderRadius.circular(20 * scale),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black.withAlpha((255 * 0.3).round()),
                         blurRadius: 10 * scale,
                         offset: Offset(0, 4 * scale),
                       ),
@@ -188,7 +188,7 @@ class _WalletScreenState extends State<WalletScreen> {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withAlpha((255 * 0.2).round()),
               blurRadius: 8 * scale,
               offset: Offset(0, 2 * scale),
             ),
@@ -291,7 +291,7 @@ class _WalletScreenState extends State<WalletScreen> {
                 width: 40 * scale,
                 height: 4 * scale,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withAlpha((255 * 0.3).round()),
                   borderRadius: BorderRadius.circular(2 * scale),
                 ),
               ),
@@ -423,9 +423,9 @@ class _WalletScreenState extends State<WalletScreen> {
         width: double.infinity,
         padding: EdgeInsets.symmetric(vertical: 16 * scale, horizontal: 20 * scale),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withAlpha((255 * 0.1).round()),
           borderRadius: BorderRadius.circular(12 * scale),
-          border: Border.all(color: Colors.white.withOpacity(0.3)),
+          border: Border.all(color: Colors.white.withAlpha((255 * 0.3).round())),
         ),
         child: Row(
           children: [

@@ -63,7 +63,7 @@ class _ProfileTabState extends State<ProfileTab> with TickerProviderStateMixin {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.3),
+              color: Colors.black.withAlpha((255 * 0.3).round()),
               blurRadius: 10 * scale,
               offset: Offset(0, -2 * scale),
             ),
@@ -128,7 +128,7 @@ class _ProfileTabState extends State<ProfileTab> with TickerProviderStateMixin {
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 16 * scale),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.1),
+                        color: Colors.white.withAlpha((255 * 0.1).round()),
                         borderRadius: BorderRadius.circular(10 * scale),
                       ),
                       child: TabBar(

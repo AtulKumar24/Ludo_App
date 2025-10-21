@@ -66,7 +66,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
               child: Container(
-                color: const Color(0xff386BE4).withOpacity(0.45),
+                color: const Color(0xff386BE4).withAlpha((255 * 0.45).round()),
               ),
             ),
           ),
@@ -232,9 +232,9 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
                                             begin: Alignment.centerLeft,
                                             end: Alignment.centerRight,
                                             colors: [
-                                              Colors.white.withOpacity(0.0),
-                                              Colors.white.withOpacity(0.3),
-                                              Colors.white.withOpacity(0.0),
+                                              Colors.white.withAlpha((255 * 0.0).round()),
+                                              Colors.white.withAlpha((255 * 0.3).round()),
+                                              Colors.white.withAlpha((255 * 0.0).round()),
                                             ],
                                           ),
                                         ),
@@ -281,7 +281,7 @@ class CircularLoaderPainter extends CustomPainter {
     for (int i = 0; i < 6; i++) {
       final progress = (animationValue + (i * 0.12)) % 1.0;
       final opacity = (1.0 - progress * 2).clamp(0.0, 1.0); // Fades out faster
-      paint.color = Colors.white.withOpacity(opacity);
+      paint.color = Colors.white.withAlpha((255 * opacity).round());
 
       final baseRadius = (60.0 + (i * 20.0)) * scale;
       final expandedRadius = baseRadius + (progress * 40 * scale); // Expands further
@@ -304,7 +304,7 @@ class StripePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.black.withOpacity(0.2) // Darker for better contrast
+      ..color = Colors.black.withAlpha((255 * 0.2).round()) // Darker for better contrast
       ..strokeWidth = 8 * scale
       ..style = PaintingStyle.stroke;
 

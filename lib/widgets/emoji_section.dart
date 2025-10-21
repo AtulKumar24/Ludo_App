@@ -42,7 +42,7 @@ class _EmojiSectionState extends State<EmojiSection> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withAlpha((255 * 0.3).round()),
             blurRadius: 10 * scale,
             offset: Offset(0, -2 * scale),
           ),
@@ -67,7 +67,7 @@ class _EmojiSectionState extends State<EmojiSection> {
                 duration: Duration(milliseconds: 200),
                 padding: EdgeInsets.all(8 * scale),
                 decoration: BoxDecoration(
-                  color: isSelected ? Colors.blue.withOpacity(0.3) : Colors.transparent,
+                  color: isSelected ? Colors.blue.withAlpha((255 * 0.3).round()) : Colors.transparent,
                   borderRadius: BorderRadius.circular(12 * scale),
                   border: isSelected 
                     ? Border.all(color: Colors.blue, width: 2 * scale)

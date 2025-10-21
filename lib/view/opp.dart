@@ -38,7 +38,7 @@ class _OpponentScreenState extends State<OpponentScreen> {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
               child: Container(
-                color: const Color(0xff386BE4).withOpacity(0.45),
+                color: const Color(0xff386BE4).withAlpha((255 * 0.45).round()),
               ),
             ),
           ),

@@ -82,7 +82,7 @@ class _DiceWidgetState extends State<DiceWidget>
                   border: Border.all(color: Colors.blue, width: 3 * scale),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withAlpha((255 * 0.3).round()),
                       blurRadius: 8 * scale,
                       offset: Offset(0, 4 * scale),
                     ),

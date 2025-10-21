@@ -25,7 +25,7 @@ class PlayerInfo extends StatelessWidget {
       padding: EdgeInsets.all(12 * scale),
       decoration: BoxDecoration(
         color: isCurrentPlayer
-            ? Colors.blue.withOpacity(0.2)
+            ? Colors.blue.withAlpha((255 * 0.2).round())
             : Colors.transparent,
         borderRadius: BorderRadius.circular(12 * scale),
         border: isCurrentPlayer
@@ -113,7 +113,7 @@ class PlayerInfo extends StatelessWidget {
               width: 40 * scale,
               height: 40 * scale,
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.3),
+                color: Colors.blue.withAlpha((255 * 0.3).round()),
                 borderRadius: BorderRadius.circular(8 * scale),
                 border: Border.all(color: Colors.blue, width: 2 * scale),
               ),
@@ -128,7 +128,7 @@ class PlayerInfo extends StatelessWidget {
               width: 40 * scale,
               height: 40 * scale,
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.3),
+                color: Colors.grey.withAlpha((255 * 0.3).round()),
                 borderRadius: BorderRadius.circular(8 * scale),
                 border: Border.all(color: Colors.grey, width: 2 * scale),
               ),
